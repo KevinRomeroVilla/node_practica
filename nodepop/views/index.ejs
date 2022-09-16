@@ -6,6 +6,10 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>Bienvenidos a nuestra pagina de <%= title %></p>
+    <% results.forEach(anuncios => { %>
+      <p>El nombre del articuylo <%= anuncios.nombre %> tiene un precio de <%= anuncios.precio %> euros</p>
+      <img src="../public/images/<%= anuncios.foto %>" alt="">
+    <% }) %>
   </body>
 </html>

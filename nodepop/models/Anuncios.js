@@ -9,6 +9,16 @@ const anuncioSchema = mongoose.Schema({
     tags: [String]
 });
 
+
+anuncioSchema.statics.lista= function(filtro, skip, limit,fields, sort) {
+    const query = Anuncios.find(filtro);
+    query.skip(skip);
+    query.limit(limit);
+    query.select(fields);
+    query.sort(sort);
+    return query.exec();
+}
+
 // Creamos el modelo
 const Anuncios = mongoose.model('Anuncio', anuncioSchema);
 
