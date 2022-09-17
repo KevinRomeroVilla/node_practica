@@ -1,5 +1,4 @@
 var express = require('express');
-const { Result } = require('express-validator');
 var router = express.Router();
 const Anuncios = require('../models/Anuncios')
 
@@ -21,10 +20,6 @@ router.get('/', async function(req, res, next) {
     const fields = req.query.fields;
     const sort = req.query.sort;
 
-    //ejemplos de peticiones 
-    //http://localhost:3000/api/agentes/?skip=2&limit=2&fields=name%20-_id
-    //http://localhost:3000/api/agentes/?sort=age
-
     //creo filtro vacio
     const filtro = {}
 
@@ -41,8 +36,6 @@ router.get('/', async function(req, res, next) {
   }catch (err){
     next(err);
   }
-  //const anuncios = await Anuncios.find()
-  //res.render('index',{ results: anuncios}) 
 
 });
 

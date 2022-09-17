@@ -31,9 +31,9 @@ async function initAgentes (){
 
     //crear anuncios iniciales
     const inserted = await Anuncios.insertMany([
-        {nombre: 'Bicicleta', Venta: true, precio: 230.15, foto: 'bici.jpg', tags: ['lifestyle', 'motor']},
-        {nombre: 'iPhone 3GS', Venta: false, precio: 50.00, foto: 'iphone.jpg', tags: ['lifestyle', 'mobile']},
-        {nombre: 'Control_Play', Venta: true, precio: 100.20, foto: 'control.jpg', tags: ['mobile', 'gaming']}
+        {nombre: 'bicicleta', venta: true, precio: 230.15, foto: 'bici.jpg', tags: ['lifestyle', 'motor']},
+        {nombre: 'iPhone 3GS', venta: false, precio: 50.00, foto: 'iphone.jpg', tags: ['lifestyle', 'mobile']},
+        {nombre: 'control_Play', venta: true, precio: 100.20, foto: 'control.jpg', tags: ['mobile', 'gaming']}
     ])
     console.log(`Creados ${inserted.length} anuncios.`);
 }

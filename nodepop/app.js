@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 /**
  * Rutas del API
  */
- //app.use('/api/anuncios', require('./routes/api/anuncios'));
+ app.use('/api/anuncios', require('./routes/api/anuncios'));
 
  /**
   * Rutas del Website
@@ -39,12 +39,12 @@ app.use(function(req, res, next) {
 // error handler
 app.use(function(err, req, res, next) {
   // comprobar si es un error de validación
-  //if (err.array) {
-    //err.status = 422; //error de validación
-    //const errorInfo = err.array({ onlyFirstError: true})[0];
-    //console.log(errorInfo);
-    //err.message = `Error in ${errorInfo.location}, param "${errorInfo.param}" ${errorInfo.msg}`;
-  //}
+  if (err.array) {
+    err.status = 422; //error de validación
+    const errorInfo = err.array({ onlyFirstError: true})[0];
+    console.log(errorInfo);
+    err.message = `Error in ${errorInfo.location}, param "${errorInfo.param}" ${errorInfo.msg}`;
+  }
 
   res.status(err.status || 500);
   //si es una petición al API, respondera con JSON
