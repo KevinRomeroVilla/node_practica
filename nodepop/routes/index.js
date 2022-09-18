@@ -5,7 +5,7 @@ const Anuncios = require('../models/Anuncios')
 /* GET home page. */
 router.get('/', async function(req, res, next) {
 
-  res.locals.title = "Anuncios"
+  res.locals.title = "Compra y Venta de objetos"
   try{
 
     //filtros
