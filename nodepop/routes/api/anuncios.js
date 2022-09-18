@@ -56,8 +56,8 @@ router.get('/', async (req,res, next) => {
     res.json({ result: true});
   });
   
-  // GET/api/agentes/(_id)
-  // devuelve 1 agente
+  // GET/api/anuncios/(_id)
+  // devuelve 1 anuncio
   
   router.get('/:_id', async (req, res, next) => {
     try {
@@ -73,8 +73,8 @@ router.get('/', async (req,res, next) => {
     }
   });
   
-  // PUT/api/agentes/(_id)  (body)
-  //actualizar un agente
+  // PUT/api/anuncios/(_id)  (body)
+  //actualizar un anuncio
   router.put('/:id', async (req, res, next) => {
     try {
   
@@ -115,7 +115,7 @@ router.get('/', async (req,res, next) => {
   })
   
   // DELETE/api/anuncios/:_id
-  //Eliminar un agente
+  //Eliminar un anuncio
   
   router.delete('/:id', async (req, res, next) => {
     try {
